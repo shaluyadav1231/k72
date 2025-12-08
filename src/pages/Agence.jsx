@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 const Agence = () => {
+  const first = useRef(second)
   return (
 <div>
   <div className='section1'>
