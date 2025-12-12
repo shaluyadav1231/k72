@@ -11,6 +11,7 @@ const Agence = () => {
   const imageRef = useRef(null)
 
 const imageArray=[
+     'https://k72.ca/images/teamMembers/Carl_480x640.jpg?w=480&h=640&fit=crop&s=f0a84706bc91a6f505e8ad35f520f0b7',
     'https://k72.ca/images/teamMembers/Olivier_480x640.jpg?w=480&h=640&fit=crop&s=c13569c0753117d04f1a93cf7b446d64',
     'https://k72.ca/images/teamMembers/Lawrence_480x640.jpg?w=480&h=640&fit=crop&s=0a878205586092164001a9afe0ef4007',
     'https://k72.ca/images/teamMembers/HugoJoseph_480x640.jpg?w=480&h=640&fit=crop&s=f152025b8a59b062d1e7978b5d6544c3',
@@ -21,7 +22,6 @@ const imageArray=[
     'https://k72.ca/images/teamMembers/CAMILLE_480X640_2.jpg?w=480&h=640&fit=crop&s=74317575b2d72fd11c5296615c383e4a',
     'https://k72.ca/images/teamMembers/MEGGIE_480X640_2.jpg?w=480&h=640&fit=crop&s=3604b19f8fc7b40f517954147698d847',
     'https://k72.ca/images/teamMembers/joel_480X640_3.jpg?w=480&h=640&fit=crop&s=1cadbf143b3aa916b1b414464acbb4d6',
-    
 ]
 
 
@@ -33,14 +33,25 @@ const imageArray=[
         markers:true,
         start:'top 28%',
         end:'top-70%',
-        pin:true
+        pin:true,
+        onUpdate:(elem)=>{
+          let imageIndex;
+          if(elem.progress < 1){
+            imageIndex = Math.floor(elem.progress * imageArray.length)
+          }else {
+            imageIndex = imageArray.length-1
+          }
+ 
+          imageRef.current.src = imageArray[imageIndex]
+
+        }
       }
     })
   })
   return (
 <div>
   <div className='section1'>
-  <div ref={imageDiveRef} className='absolute overflow-hidden h-[20vw] rounded-3xl w-[15vw]  top-96 left-[30vw] bg-red-500'>
+  <div ref={imageDiveRef} className='absolute overflow-hidden h-[20vw] rounded-3xl w-[15vw]  top-96 left-[30vw] '>
     <img ref={imageRef} className='h-full object-cover w-full ' src="https://k72.ca/images/teamMembers/Carl_480x640.jpg?w=480&h=640&fit=crop&s=f0a84706bc91a6f505e8ad35f520f0b7 " alt="" />
   </div>
     <div className=' relative font-[font-2]'>
