@@ -30,7 +30,7 @@ const imageArray=[
     gsap.to(imageDiveRef.current,{
       scrollTrigger:{
         trigger:imageDiveRef.current,
-        markers:true,
+    
         start:'top 28%',
         end:'top-70%',
         pin:true,
