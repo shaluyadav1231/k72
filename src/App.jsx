@@ -16,17 +16,25 @@ useGSAP(function(){
       amount: -0.3
     }
   })
+  tl.to('.stair',{
+    y:'100%',
+    stagger:{
+      amount:-0.3
+    }
+  })
 })
 
   return (
     <div className='text-white'>
-      <div className='h-screen w-full flex fixed z-20 top-0'>
+      <div className='h-screen w-full fixed z-20 top-0'>
+        <div className='h-full w-full flex'>
         <div className=' stair h-full w-1/2 bg-black'></div>
         <div className=' stair h-full w-1/2 bg-black'></div>
         <div className=' stair h-full w-1/2 bg-black'></div>
         <div className=' stair h-full w-1/2 bg-black'></div>
         <div className=' stair h-full w-1/2 bg-black'></div>
 
+      </div>
       </div>
       <Routes >
         <Route path='/' element={<Home />} />
