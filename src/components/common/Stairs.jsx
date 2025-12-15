@@ -51,7 +51,6 @@ console.log(props.children);
 
   return (
         <div>
-            <h1>hero</h1>
             <div  ref={stairParesntRef} className='h-screen w-full fixed z-20 top-0'>
         <div className='h-full w-full flex'>
         <div className=' stair h-full w-1/2 bg-black'></div>
