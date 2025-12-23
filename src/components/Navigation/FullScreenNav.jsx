@@ -3,29 +3,40 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 
 const FullScreenNav = () => {
-  const stairParesntRef = useRef(null);
+
+  const fullNavLinkRef = useRef(null)
   useGSAP(function () {
     const tl = gsap.timeline();
-
-    tl.from(".stair", {
+    tl.from(".stairing", {
+      delay:1,
       height: 0,
       stagger: {
         amount: -0.3,
       },
     });
+    tl.from(fullNavLinkRef.current,{
+      opacity:0
+    })
+    tl.from('.link',{
+      opacity:0,
+      rotateX:90,
+      stagger: {
+        amount: 0.2,
+      }
+    })
   });
   return (
     <div
       id="fullscreennav"
-      className="text-white h-screen overflow-hidden  w-full absolute bg-black"
+      className= " hidden text-white h-screen overflow-hidden  w-full absolute"
     >
-      <div ref={stairParesntRef} className="h-screen w-full fixed">
+      <div  className="h-screen w-full fixed">
         <div className="h-full w-full flex">
-          <div className=" stair h-full w-1/2 bg-black"></div>
-          <div className=" stair h-full w-1/2 bg-white"></div>
-          <div className=" stair h-full w-1/2 bg-black"></div>
-          <div className=" stair h-full w-1/2 bg-white"></div>
-          <div className=" stair h-full w-1/2 bg-black"></div>
+          <div className=" stairing h-full w-1/2 bg-red-500"></div>
+          <div className=" stairing h-full w-1/2 bg-red-500"></div>
+          <div className=" stairing h-full w-1/2 bg-red-500"></div>
+          <div className=" stairing h-full w-1/2 bg-red-500"></div>
+          <div className=" stairing h-full w-1/2 bg-red-500"></div>
         </div>
       </div>
       <div className="relative">
@@ -51,7 +62,7 @@ const FullScreenNav = () => {
           </div>
         </div>
         <div className="">
-          <div className=" link relative border-t-1 border-white">
+          <div className=" link origin-top relative border-t-1 border-white">
             <h1 className="font-[font-2] text-[8vw] text-center leading-[1] pt-8 uppercase">
               Projects
             </h1>
@@ -94,7 +105,7 @@ const FullScreenNav = () => {
               </div>
             </div>
           </div>
-          <div className=" link relative border-t-1 border-white">
+          <div className=" link origin-top relative border-t-1 border-white">
             <h1 className="font-[font-2] text-[8vw] text-center leading-[1] pt-8 uppercase">
               Projects
             </h1>
@@ -137,7 +148,7 @@ const FullScreenNav = () => {
               </div>
             </div>
           </div>
-          <div className=" link relative border-t-1 border-white">
+          <div className=" link origin-top relative border-t-1 border-white">
             <h1 className="font-[font-2] text-[8vw] text-center leading-[1] pt-8 uppercase">
               Projects
             </h1>
@@ -180,7 +191,7 @@ const FullScreenNav = () => {
               </div>
             </div>
           </div>
-          <div className=" link relative border-y-1 border-white">
+          <div className=" link origin-top relative border-y-1 border-white">
             <h1 className="font-[font-2] text-[8vw] text-center leading-[1] pt-8 uppercase">
               Projects
             </h1>

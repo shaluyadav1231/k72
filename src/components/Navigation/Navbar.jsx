@@ -28,8 +28,11 @@ const Navbar = () => {
         navGreenRef.current.style.height = '0%'
       }}
       className="h-16 bg-black relative w-[16vw]">
-        <div ref={navGreenRef} className=" bg-[#D3FD50] transition-all absolute top-0 h-full w-full"></div>
-        <div className="relative"></div>
+        <div ref={navGreenRef} className=" bg-[#D3FD50] transition-all absolute top-0 h-0 w-full"></div>
+        <div className="relative h-full px-12 flex flex-col justify-center items-end gap-1.5">
+          <div className="w-18 h-0.5 bg-white"></div>
+          <div className="w-10 h-0.5 bg-white"></div>
+        </div>
       </div>
     </div>
   );
