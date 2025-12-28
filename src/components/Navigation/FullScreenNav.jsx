@@ -1,17 +1,20 @@
 import { useGSAP } from "@gsap/react";
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import gsap from "gsap";
+import NavbarContext from "../../context/NavContaxt";
 
 const FullScreenNav = () => {
-
-  const fullNavLinkRef = useRef(null)
+const fullNavLinkRef = useRef(null)
+const [navOpen, setNavOpen] =useContext(NavbarContext)
   useGSAP(function () {
     const tl = gsap.timeline();
+    // tl.to('#fullscreennav',{
+    //   display:'block'
+    // })
     tl.from(".stairing", {
-      delay:1,
       height: 0,
       stagger: {
-        amount: -0.3,
+        amount: -0.3, 
       },
     });
     tl.from(fullNavLinkRef.current,{
@@ -24,7 +27,13 @@ const FullScreenNav = () => {
         amount: 0.2,
       }
     })
-  });
+    tl.pause()
+    if(navOpen){
+      tl.play()
+    }else{
+      tl.reverse()
+    }
+  },[navOpen]);
   return (
     <div
       id="fullscreennav"
