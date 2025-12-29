@@ -5,6 +5,7 @@ import NavbarContext from "../../context/NavContaxt";
 
 const FullScreenNav = () => {
 const fullNavLinkRef = useRef(null)
+const fullScreenRef = useRef(null)
 const [navOpen, setNavOpen] =useContext(NavbarContext)
   useGSAP(function () {
     const tl = gsap.timeline();
@@ -36,6 +37,7 @@ const [navOpen, setNavOpen] =useContext(NavbarContext)
   },[navOpen]);
   return (
     <div
+    ref={fullScreenRef}
       id="fullscreennav"
       className= " hidden text-white h-screen overflow-hidden  w-full absolute"
     >
