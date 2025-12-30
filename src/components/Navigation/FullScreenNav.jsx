@@ -30,8 +30,10 @@ const [navOpen, setNavOpen] =useContext(NavbarContext)
     })
     tl.pause()
     if(navOpen){
+      fullScreenRef.current.style.display = 'block'
       tl.play()
     }else{
+      fullScreenRef.current.style.display = 'none'
       tl.reverse()
     }
   },[navOpen]);
@@ -39,7 +41,7 @@ const [navOpen, setNavOpen] =useContext(NavbarContext)
     <div
     ref={fullScreenRef}
       id="fullscreennav"
-      className= " hidden text-white h-screen overflow-hidden  w-full absolute"
+      className= " text-white h-screen overflow-hidden  w-full absolute"
     >
       <div  className="h-screen w-full fixed">
         <div className="h-full w-full flex">
