@@ -3,7 +3,7 @@ import React, { createContext, useState } from 'react'
 
 export const NavContaxt = ({children}) => {
   const NavbarContext = createContext()
-  const [navOpen, setNavOpen] = useState(false)
+  const [navOpen, setNavOpen] = useState(true)
   return (
     <div>
         <NavbarContext.Provider value={[navOpen, setNavOpen]}>
@@ -14,3 +14,20 @@ export const NavContaxt = ({children}) => {
 }
 
 export default NavContaxt
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
