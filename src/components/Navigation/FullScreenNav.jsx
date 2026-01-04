@@ -41,7 +41,7 @@ const [navOpen, setNavOpen] =useContext(NavbarContext)
     <div
     ref={fullScreenRef}
       id="fullscreennav"
-      className= " text-white h-screen overflow-hidden  w-full absolute"
+      className= " text-white h-screen overflow-hidden  w-full z-50 absolute"
     >
       <div  className="h-screen w-full fixed">
         <div className="h-full w-full flex">

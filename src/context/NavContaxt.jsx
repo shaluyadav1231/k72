@@ -1,9 +1,10 @@
 import React, { createContext, useState } from 'react'
 
+ export const NavbarContext = createContext()
 
-export const NavContaxt = ({children}) => {
-  const NavbarContext = createContext()
-  const [navOpen, setNavOpen] = useState(true)
+ const NavContext = ({children}) => {
+ 
+  const [navOpen, setNavOpen] = useState(false)
   return (
     <div>
         <NavbarContext.Provider value={[navOpen, setNavOpen]}>
@@ -18,7 +19,7 @@ export default NavContaxt
 
 
 
- 
+
 
 
 
