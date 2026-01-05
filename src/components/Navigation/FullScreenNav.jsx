@@ -69,7 +69,11 @@ const [navOpen, setNavOpen] =useContext(NavbarContext)
               </svg>
             </div>
           </div>
-          <div className="h-32 w-32 relative cursor-pointer ">
+          <div
+          onClick={()=>{
+            setNavOpen(false)
+          }}
+          className="h-32 w-32 relative cursor-pointer ">
             <div className="h-44 w-1 -rotate-45 origin-top absolute bg-[#D3FD50]"></div>
             <div className="h-44 w-1 right-0 rotate-45 origin-top absolute bg-[#D3FD50] "></div>
           </div>
