@@ -14,7 +14,7 @@ import React, { createContext, useState } from 'react'
   )
 }
 
-export default NavContaxt
+export default NavContext
 
 
 

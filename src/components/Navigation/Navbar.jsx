@@ -1,9 +1,11 @@
 import React, { useContext, useRef } from "react";
-import {NavbarContaxt} from '../../context/NavContaxt' 
+import { NavbarContext } from '../../context/NavContaxt'
+ 
 
 const Navbar = () => {
   const navGreenRef = useRef(null)
-  const [navOpen, setNavOpen] = useContext(NavbarContaxt)
+const [navOpen, setNavOpen] = useContext(NavbarContext)
+
   return (
     <div className="z-4  flex  fixed  top-0  w-full items-start justify-between">
       <div className="p-5">

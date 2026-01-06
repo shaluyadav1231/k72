@@ -3,6 +3,7 @@ import React, { useContext, useRef } from "react";
 import gsap from "gsap";
 import NavbarContext from "../../context/NavContaxt";
 
+
 const FullScreenNav = () => {
 const fullNavLinkRef = useRef(null)
 const fullScreenRef = useRef(null)
@@ -38,10 +39,9 @@ const [navOpen, setNavOpen] =useContext(NavbarContext)
     }
   },[navOpen]);
   return (
-    <div
-    ref={fullScreenRef}
+    <div ref={fullScreenRef}
       id="fullscreennav"
-      className= " text-white h-screen overflow-hidden  w-full z-50 absolute"
+      className= " hidden text-white h-screen overflow-hidden  w-full z-50 absolute"
     >
       <div  className="h-screen w-full fixed">
         <div className="h-full w-full flex">
