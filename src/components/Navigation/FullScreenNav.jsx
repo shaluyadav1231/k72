@@ -29,6 +29,9 @@ const [navOpen, setNavOpen] =useContext(NavbarContext)
         amount: 0.2,
       }
     })
+    tl.from('navlink',{
+      opacity:'none'
+    })
     tl.pause()
     if(navOpen){
       fullScreenRef.current.style.display = 'block'
@@ -52,8 +55,8 @@ const [navOpen, setNavOpen] =useContext(NavbarContext)
           <div className=" stairing h-full w-1/2 bg-red-500"></div>
         </div>
       </div>
-      <div className="relative">
-        <div className="flex w-full justify-between p-5 item-start">
+      <div ref={fullScreenRef}className="relative">
+        <div className="navlink flex w-full justify-between p-5 item-start">
           <div className="">
             <div className="w-36">
               <svg
